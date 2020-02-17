@@ -1,0 +1,20 @@
+server:
+  port: 8200
+spring:
+  application:
+    name: app-member
+eureka:
+  client:
+    service-url:
+      ## 当前会员服务注册到eureka服务地址
+      defaultZone: http://127.0.0.1:8100/eureka,http://127.0.0.1:9100/eureka
+    register-with-eureka: true
+    fetch-registry: true
+    # 心跳检测时间与续约时间
+    instance:
+      #Eureka客户端向服务端发送心跳的时间间隔，单位为妙
+      lease-renewal-interval-in-seconds: 1
+      #Eureka服务端在收到最后一次心跳之后等待的时间上限，单位为秒，超过则剔除。
+      lease-expiration-duration-in-seconds: 2
+
+

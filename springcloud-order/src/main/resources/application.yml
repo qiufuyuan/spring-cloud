@@ -1,0 +1,11 @@
+server:
+  port: 8300
+spring:
+  application:
+    name: app-order
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8100/eureka,http://127.0.0.1:9100/eureka
+    register-with-eureka: true
+    fetch-registry: true
